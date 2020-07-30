@@ -14,6 +14,7 @@ namespace arrays2 {
                     case 1:
                         ExerciseOne.One(null);
                         break;
+                    /*
                     case 2:
                         ExerciseTwo.Two(null);
                         break;
@@ -38,6 +39,7 @@ namespace arrays2 {
                     case 9:
                         ExerciseNinve.Nine(null);
                         break;
+                    */
                     default:
                         break;
                 }
