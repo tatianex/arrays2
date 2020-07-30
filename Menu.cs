@@ -14,10 +14,10 @@ namespace arrays2 {
                     case 1:
                         ExerciseOne.One(null);
                         break;
-                    /*
                     case 2:
                         ExerciseTwo.Two(null);
                         break;
+                    /*
                      case 3:
                         ExerciseThree.Three(null);
                         break;
