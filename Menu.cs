@@ -17,10 +17,10 @@ namespace arrays2 {
                     case 2:
                         ExerciseTwo.Two(null);
                         break;
-                    /*
-                     case 3:
+                    case 3:
                         ExerciseThree.Three(null);
                         break;
+                    /*
                     case 4:
                         ExerciseFour.Four(null);
                         break;
