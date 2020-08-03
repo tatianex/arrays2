@@ -26,10 +26,10 @@ namespace arrays2 {
                     case 5:
                         ExerciseFive.Five(null);
                         break;
-                    /*
                     case 6:
                         ExerciseSix.Six(null);
                         break;
+                    /*
                     case 7:
                         ExerciseSeven.Seven(null);
                         break;
