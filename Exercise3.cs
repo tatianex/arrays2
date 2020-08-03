@@ -17,14 +17,21 @@ namespace arrays2 {
                 "A percentagem de pessoas do sexo masculino que responderam não;"
             ));
 
-            string[,] poll = new string[10,2] {{"F", "S"}, {"M", "S"}, {"F", "N"},
-                {"M", "N"}, {"F", "S"}, {"M", "S"}, {"F", "N"}, {"F", "N"}, {"F", "S"},
-                {"M", "S"}};
+            string[,] poll = new string[10,2] {
+                {"F", "S"}, 
+                {"M", "S"}, 
+                {"F", "N"},
+                {"M", "N"},
+                {"F", "S"},
+                {"M", "S"},
+                {"F", "N"},
+                {"F", "N"},
+                {"F", "S"},
+                {"M", "S"}
+            };
             
             int positiveAnswers = 0;
             int negativeAnswers = 0;
-            int womem = 0;
-            int men = 0;
             int totalWomemYes = 0;
             int totalMenNo = 0;
 
@@ -34,19 +41,14 @@ namespace arrays2 {
             }
 
             for (int i = 0; i < 10; i++) {
-                if (poll[i, 0] == "F") womem++;
-                else men++;
-            }
-
-            for (int i = 0; i < 10; i++) {
                 if ((poll[i, 0] == "F") && (poll[i, 1] == "S")) totalWomemYes++;
                 if ((poll[i, 0] == "M") && (poll[i, 1] == "N")) totalMenNo++;
             }
 
-            double percentageWY = ((Convert.ToDouble(totalWomemYes) / Convert.ToDouble(womem)) * 100);
-            double percentageMN = ((Convert.ToDouble(totalMenNo) / Convert.ToDouble(men)) * 100);
+            double percentageWY = ((Convert.ToDouble(totalWomemYes) / 10) * 100);
+            double percentageMN = ((Convert.ToDouble(totalMenNo) / 10) * 100);
 
-            Console.WriteLine($"Obtivemos {positiveAnswers} respostas positivas.");
+            Console.WriteLine($"\n\nObtivemos {positiveAnswers} respostas positivas.");
             Console.WriteLine($"Obtivemos {negativeAnswers} respostas negativas.");
             Console.WriteLine($"{percentageWY}% de mulheres responderam sim.");
             Console.WriteLine($"{percentageMN}% de homens responderam não.");
