@@ -4,17 +4,26 @@ namespace arrays2 {
     class ExerciseFive {
         public static void Five(string[] args)
         {
-            Console.WriteLine("Exercício 5.\nContar quantos valores de um vetor de 10 posições são positivos.\n");
+            Console.WriteLine("\nExercício 5.\nContar quantos valores de um vetor de 10 posições são positivos.\n");
 
-            int[] a = new int[10] {-15, 10, -4, 48, -57, 9, -23, -31, 21, -6};
+            const int arrayLenght = 3;
 
-            foreach (int value in a) Console.Write($"{value}, ");
+            var x = new double[arrayLenght];
 
-            int totalPositive = 0;
-            foreach (int value in a) {
+            for (int i = 0; i < arrayLenght; i++) {
+                Console.WriteLine($"Informe o {i + 1}º número do vetor");
+                x[i] = Double.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("\n");
+
+            foreach (int value in x) Console.Write($"{value}, ");
+
+            double totalPositive = 0d;
+            foreach (int value in x) {
                 if (value > 0) totalPositive++;
             }
-            Console.Write($"\nO array contém {totalPositive} números positivos.");
+            Console.Write($"\nO array contém {totalPositive} número(s) positivo(s).");
             Console.ReadLine();
         }
     }
