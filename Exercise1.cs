@@ -15,15 +15,27 @@ namespace arrays2 {
 
             for (int i = 0; i < arraysLenght; i++) {
                 Console.WriteLine($"Informe o {i + 1}º número da primeira lista");
-                a[i] = Double.Parse(Console.ReadLine());
+                var result = Console.ReadLine();
+                try {
+                    a[i] = Double.Parse(result);
+                }
+                catch (System.Exception) {
+                    Console.WriteLine("O número está em formato errado. Tente novamente");
+                }
             }
 
             Console.WriteLine("\n");
 
             for (int i = 0; i < arraysLenght; i++) {
-                Console.WriteLine($"Informe o {i + 1} número da segunda lista");
-                b[i] = Double.Parse(Console.ReadLine());
-            }
+                Console.WriteLine($"Informe o {i + 1}º número da segunda lista");
+                var result = Console.ReadLine();
+                try {
+                    b[i] = Double.Parse(result);
+                }
+                catch (System.Exception) {
+                    Console.WriteLine("O número está em formato errado. Tente novamente");
+                }
+        }
 
             Console.WriteLine("\nO primeiro array tem os seguintes elementos: ");
             foreach (double i in a) Console.Write($"{i}, ");
