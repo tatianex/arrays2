@@ -13,29 +13,39 @@ namespace arrays2 {
             var b = new double[arraysLenght];
             var c = new double[arraysLenght];
 
+            var isValidNumber = false;
+
             for (int i = 0; i < arraysLenght; i++) {
-                Console.WriteLine($"Informe o {i + 1}º número da primeira lista");
-                var result = Console.ReadLine();
-                try {
-                    a[i] = Double.Parse(result);
+                while (!isValidNumber) {
+                    Console.WriteLine($"Informe o {i + 1}º número da primeira lista");
+                    var result = Console.ReadLine();
+                    try {
+                        a[i] = Double.Parse(result);
+                        isValidNumber = true;
+                    }
+                    catch (System.Exception) {
+                        Console.WriteLine("O número está em formato errado. Tente novamente");
+                    }
                 }
-                catch (System.Exception) {
-                    Console.WriteLine("O número está em formato errado. Tente novamente");
-                }
+                isValidNumber = false;
             }
 
             Console.WriteLine("\n");
 
             for (int i = 0; i < arraysLenght; i++) {
-                Console.WriteLine($"Informe o {i + 1}º número da segunda lista");
-                var result = Console.ReadLine();
-                try {
-                    b[i] = Double.Parse(result);
+                while (!isValidNumber) {
+                    Console.WriteLine($"Informe o {i + 1}º número da segunda lista");
+                    var result = Console.ReadLine();
+                    try {
+                        b[i] = Double.Parse(result);
+                        isValidNumber = true;
+                    }
+                    catch (System.Exception) {
+                        Console.WriteLine("O número está em formato errado. Tente novamente");
+                    }
                 }
-                catch (System.Exception) {
-                    Console.WriteLine("O número está em formato errado. Tente novamente");
-                }
-        }
+                isValidNumber = false;
+            }
 
             Console.WriteLine("\nO primeiro array tem os seguintes elementos: ");
             foreach (double i in a) Console.Write($"{i}, ");
