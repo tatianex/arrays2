@@ -8,26 +8,34 @@ namespace arrays2 {
             Console.WriteLine("Escrever a seguir o valor do maior elemento de Q");
             Console.WriteLine("e a respectiva posição que ele ocupa no vetor.");
             
-            int[] q = new int[10];
-            int biggestValue = 0;
-            int index = 0;
-            int i = 0;
-            int numberInformed = 0;
+            int arrayLength = 3;
+            var q = new double[arrayLength];
+            double biggestValue = Double.MinValue;
+            var input = "";
 
-            while (i < 10) {
-                Console.WriteLine($"Informe o {i + 1}º número positivo ou digite 0 para sair:");
-                numberInformed = Convert.ToInt32(Console.ReadLine());
-                if (numberInformed == 0) break;
-                if (numberInformed > 0) {
-                    q[i] = numberInformed;
-                    i++;
+            for (int i = 0; i < arrayLength; i++) {
+                var numberValid = false;
+                while (!numberValid) {
+                    Console.WriteLine($"Informe o {i + 1}º número positivo ou digite x para sair:");
+                    if ((input == "x") && (input == "X")) break;
+                    try {
+                        var numberInformed = Double.Parse(Console.ReadLine());
+                        if (numberInformed > 0) q[i] = numberInformed;
+                        else i--;
+                        break;
+                    }
+                    catch (System.Exception) {
+                        Console.WriteLine("Por favor, informe um número válido.");
+                    }
                 }
             }
 
-            for (int j = 0; j < 10; j++){
-                if (q[j] > biggestValue) {
-                    biggestValue = q[j];
-                    index = j;
+            var index = 0;
+
+            for (int i = 0; i < arrayLength; i++) {
+                if (q[i] > biggestValue) {
+                    biggestValue = q[i];
+                    index = i;
                 }
             }
 
