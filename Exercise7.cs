@@ -18,7 +18,7 @@ namespace arrays2 {
             while (true) {
                 Console.WriteLine("Informe um valor ou digite X para sair");
                 input = Console.ReadLine();
-                if ((input != "x") && (input != "X")) {
+                if ((input != "x") || (input != "X")) {
                     try {
                         double number = Double.Parse(input);
                         numbers.Add(number);

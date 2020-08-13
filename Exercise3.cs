@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace arrays2 {
     class ExerciseThree {
@@ -17,37 +18,62 @@ namespace arrays2 {
                 "A percentagem de pessoas do sexo masculino que responderam não;"
             ));
 
-            string[,] poll = new string[10,2] {
-                {"F", "S"}, 
-                {"M", "S"}, 
-                {"F", "N"},
-                {"M", "N"},
-                {"F", "S"},
-                {"M", "S"},
-                {"F", "N"},
-                {"F", "N"},
-                {"F", "S"},
-                {"M", "S"}
-            };
+            var respondents = new List<(string Gender, string Answer)> {};            
             
             int positiveAnswers = 0;
             int negativeAnswers = 0;
             int totalWomemYes = 0;
             int totalMenNo = 0;
 
-            for (int i = 0; i < 10; i++) {
-                if (poll[i, 1] == "S") positiveAnswers++;
-                else negativeAnswers++;
+            const int totalRespondents = 6;
+
+
+            for (int i = 0; i < totalRespondents; i++) {
+                while (true) {
+                    Console.WriteLine($"\nRESPONDENTE {i + 1}");
+
+                    Console.WriteLine("Informe seu gênero F/M: ");
+                    var gender = Console.ReadLine().ToUpper();
+                    if ((gender != "F") && (gender != "M")) {
+                        i--;
+                        break;
+                    }
+                    
+                    Console.WriteLine("Informe sua resposta S/N: ");
+                    var answer = Console.ReadLine().ToUpper();
+                    if ((answer != "S") && (answer != "N")) {
+                        i--;
+                        break;
+                    }
+                    
+                    respondents.Add((gender, answer));
+                    break;
+                }
             }
 
-            for (int i = 0; i < 10; i++) {
-                if ((poll[i, 0] == "F") && (poll[i, 1] == "S")) totalWomemYes++;
-                if ((poll[i, 0] == "M") && (poll[i, 1] == "N")) totalMenNo++;
+            Console.WriteLine("\nRESPOSTAS");
+
+            for (int i = 0; i < respondents.Count; i++) 
+                Console.WriteLine($"Gênero: {respondents[i].Gender}, Resposta: {respondents[i].Answer}");
+
+            for (int i = 0; i < respondents.Count; i++) {
+                if (respondents[i].Answer == "S")
+                    positiveAnswers++;
+                else if (respondents[i].Answer == "N")
+                    negativeAnswers++;
+            }
+
+            for (int i = 0; i < respondents.Count; i++) {
+                if ((respondents[i].Gender == "F") && (respondents[i].Answer == "S"))
+                    totalWomemYes++;
+                if ((respondents[i].Gender == "M") && (respondents[i].Answer == "N"))
+                    totalMenNo++;
             }
 
             double percentageWY = ((Convert.ToDouble(totalWomemYes) / 10) * 100);
             double percentageMN = ((Convert.ToDouble(totalMenNo) / 10) * 100);
 
+            Console.WriteLine("\nESTATÍSTICAS");
             Console.WriteLine($"\n\nObtivemos {positiveAnswers} respostas positivas.");
             Console.WriteLine($"Obtivemos {negativeAnswers} respostas negativas.");
             Console.WriteLine($"{percentageWY}% de mulheres responderam sim.");
