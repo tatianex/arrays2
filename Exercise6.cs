@@ -8,7 +8,7 @@ namespace arrays2 {
             Console.WriteLine("Escrever a seguir o valor do maior elemento de Q");
             Console.WriteLine("e a respectiva posição que ele ocupa no vetor.");
             
-            int arrayLength = 3;
+            int arrayLength = 10;
             var q = new double[arrayLength];
             double biggestValue = Double.MinValue;
             var input = "";
