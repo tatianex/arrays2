@@ -14,7 +14,12 @@ namespace arrays2 {
 
             for (int i = 0; i < arrayLenght; i++) {
                 Console.WriteLine($"Informe o {i + 1}º número da matriz");
-                x[i] = Double.Parse(Console.ReadLine());
+                try {
+                    x[i] = Double.Parse(Console.ReadLine());
+                }
+                catch (System.Exception) {
+                    Console.WriteLine("Por favor informe um número válido.");
+                }
             }
 
             Console.WriteLine("\nA matriz contém os seguintes valores: ");

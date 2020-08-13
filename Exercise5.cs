@@ -6,13 +6,18 @@ namespace arrays2 {
         {
             Console.WriteLine("\nExercício 5.\nContar quantos valores de um vetor de 10 posições são positivos.\n");
 
-            const int arrayLenght = 3;
+            const int arrayLenght = 10;
 
             var x = new double[arrayLenght];
 
             for (int i = 0; i < arrayLenght; i++) {
                 Console.WriteLine($"Informe o {i + 1}º número do vetor");
-                x[i] = Double.Parse(Console.ReadLine());
+                try {
+                    x[i] = Double.Parse(Console.ReadLine());
+                }
+                catch (System.Exception) {
+                    Console.WriteLine("Por favor infome um valor válido.");
+                }
             }
 
             Console.WriteLine("\n");

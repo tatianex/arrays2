@@ -11,10 +11,20 @@ namespace arrays2 {
             const int arrayLenght = 10;
 
             var x = new double[arrayLenght];
+            
 
             for (int i = 0; i < arrayLenght; i++) {
-                Console.WriteLine($"Informe o {i + 1} número");
-                x[i] = Double.Parse(Console.ReadLine());
+                Console.WriteLine($"Informe o {i + 1}º número");
+                var isValidNumber = false;
+                while (!isValidNumber) {
+                    try {
+                        x[i] = Double.Parse(Console.ReadLine());
+                        isValidNumber = true;
+                    }
+                    catch (System.Exception) {
+                        Console.WriteLine("Por favor digite um valor válido.");
+                    }
+                }
             }
 
             if (x.Length != x.Distinct().Count()) Console.WriteLine("Este array contém números repetidos.");

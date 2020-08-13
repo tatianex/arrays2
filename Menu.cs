@@ -29,10 +29,10 @@ namespace arrays2 {
                     case 6:
                         ExerciseSix.Six(null);
                         break;
-                    /*
                     case 7:
                         ExerciseSeven.Seven(null);
                         break;
+                    /*
                     case 8:
                         ExerciseEight.Eight(null);
                         break;

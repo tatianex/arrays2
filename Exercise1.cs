@@ -24,7 +24,7 @@ namespace arrays2 {
                         isValidNumber = true;
                     }
                     catch (System.Exception) {
-                        Console.WriteLine("O número está em formato errado. Tente novamente");
+                        Console.WriteLine("Por favor digite um valor válido.");
                     }
                 }
                 isValidNumber = false;
