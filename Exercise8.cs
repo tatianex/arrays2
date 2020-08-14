@@ -8,7 +8,7 @@ namespace arrays2 {
             Console.Write("onde cada posição recebe uma letra do alfabeto.");
             Console.WriteLine("No final, imprima quantas destas são vogais");
 
-            const int arrayLength = 6;
+            const int arrayLength = 10;
             var letters = new string [arrayLength];
             var vowels = 0;
 

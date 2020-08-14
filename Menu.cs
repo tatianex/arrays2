@@ -35,11 +35,9 @@ namespace arrays2 {
                     case 8:
                         ExerciseEight.Eigth(null);
                         break;
-                    /*
                     case 9:
-                        ExerciseNinve.Nine(null);
+                        ExerciseNine.Nine(null);
                         break;
-                    */
                     default:
                         break;
                 }
